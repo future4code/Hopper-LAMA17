@@ -1,0 +1,30 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "Fernando fernandes",
+    "email": "fernando@email.com",
+    "password": "123456"
+}
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "fernando@email.com",
+    "password": "123456"
+}
+###
+GET http://localhost:3003/user/select
+Content-Type: application/json
+###
+PUT http://localhost:3003/user/edit
+Authorization: eyJhbGciiOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkMmI4MDFlLTg1YmEtNGYwMS1hZmQ1LWFiOTk1NTkzMzM4YSIsImlhdCI6MTY2OTM4Nzk4NywiZXhwIjoxNjY5MzkxNTg3fQ.PsiWA3T7gSMbA1ASs1auUS1UYgMqOIxIPocR9lglRLE
+Content-Type: application/json
+
+{
+    "name": "Alberto fernandes",
+    "email": "fernando@email.com",
+    "password": "123456",
+    "role": "ADMIN"
+}

@@ -19,3 +19,7 @@ export class User{
     setPassword(newPassword: string){this.password = newPassword}
     setRole(newRole: string){this.role = newRole}
 }
+
+export type AuthenticationData = {
+    id: string
+}

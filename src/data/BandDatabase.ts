@@ -1,6 +1,7 @@
 import { BaseDatabase } from "./BaseDatabase";
 import { Band } from "../types/Band";
 
+
 export class BandDatabase extends BaseDatabase {
     private static TABLE_NAME = "LAMA_BANDS";
 
