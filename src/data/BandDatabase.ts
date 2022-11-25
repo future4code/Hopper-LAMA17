@@ -1,5 +1,6 @@
 import { BaseDatabase } from "./BaseDatabase";
 import { Band } from "../types/Band";
+import { CustomError } from "../error/CustomError";
 
 
 export class BandDatabase extends BaseDatabase {
@@ -16,23 +17,16 @@ export class BandDatabase extends BaseDatabase {
         .into(BandDatabase.TABLE_NAME);
     }
 
-    async select(){
+    async findBand(info:string){
         try {
-            const bands: Band[] = [];
-
-            const result = await
-            BandDatabase
+            const result = await BandDatabase
                 .connection
-                .select("*")
+                .select()
+                .where(info) 
                 .from(BandDatabase.TABLE_NAME)
 
-            for(let band of result){
-                bands.push(band)
+            return result[0]
             }
-            return bands
-
-        } catch(error:any){
-            throw new Error(error.message)
-        }
+        catch(error:any){throw new CustomError(400, error.message)}
     }
 }

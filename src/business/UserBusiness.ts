@@ -1,5 +1,5 @@
 import { UserDatabase } from "../data/UserDatabase";
-import { CustomError, InvalidPassword, UserNotFound } from "../error/CustomError";
+import { CustomError, InvalidPassword, InvalidRole, UserNotFound } from "../error/CustomError";
 import { Authenticator } from "../services/Authenticator";
 import { IdGenerator } from "../services/idGenerator";
 
@@ -16,6 +16,10 @@ export class UserBusiness {
             throw new Error("Email inválido");
         }
 
+        if(role !== "NORMAL" && role !== "ADMIN"){
+            throw new InvalidRole();
+        }
+
         const id:string = idGenerator.generateId();
 
         const userDatabase = new UserDatabase()
@@ -27,7 +31,7 @@ export class UserBusiness {
             role
         })
 
-        const token = authenticator.generateToken({id})
+        const token = authenticator.generateToken(id, role)
 
         return token
     }
@@ -52,7 +56,7 @@ export class UserBusiness {
                 throw new InvalidPassword
             }
 
-            const token = authenticator.generateToken({id: user.id})
+            const token = authenticator.generateToken(user.id, user.role)
             
             return token
 

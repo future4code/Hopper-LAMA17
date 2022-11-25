@@ -21,3 +21,9 @@ export class Unauthorized extends CustomError{
         super(401, "Usuário não autorizado")
     }
 }
+
+export class InvalidRole extends CustomError{
+    constructor(){
+        super(401, "Cargo inválido")
+    }
+}

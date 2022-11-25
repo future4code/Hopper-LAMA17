@@ -3,9 +3,9 @@ import { Unauthorized } from "../error/CustomError"
 import { AuthenticationData } from "../types/User"
 
 export class Authenticator {
-    public generateToken = ({id}: AuthenticationData): string => {
+    public generateToken = (id: string, role: string): any => {
         const token = jwt.sign(
-            {id},
+            {id, role},
             process.env.JWT_KEY as string,
             {expiresIn:"1h"}
         )

@@ -4,7 +4,7 @@ export class User{
         private name: string,
         private email: string,
         private password: string,
-        private role: string
+        private role: UserRole
     ) {}
 
     getId(){return this.id}
@@ -17,9 +17,15 @@ export class User{
     setName(newName: string){this.name = newName}
     setEmail(newEmail: string){this.email = newEmail}
     setPassword(newPassword: string){this.password = newPassword}
-    setRole(newRole: string){this.role = newRole}
+    setRole(newRole: UserRole){this.role = newRole}
 }
 
 export type AuthenticationData = {
-    id: string
+    id: string,
+    role: UserRole
+}
+
+export enum UserRole {
+    NORMAL = "NORMAL",
+    ADMIN = "ADMIN",
 }
