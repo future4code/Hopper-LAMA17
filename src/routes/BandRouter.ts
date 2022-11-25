@@ -6,4 +6,4 @@ export const BandRouter = express.Router()
 const bandController = new BandController()
 
 BandRouter.post("/create", bandController.create)
-BandRouter.get("/select", bandController.select)
+BandRouter.get("/find", bandController.findBand)
