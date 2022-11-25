@@ -44,5 +44,5 @@ GET http://localhost:3003/band/find
 Content-Type: application/json
 
 {
-    "name": "Os Maneiros"
+    "id": "07313d37-50ea-4643-83f9-299b15535a68"
 }
