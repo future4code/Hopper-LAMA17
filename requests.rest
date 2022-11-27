@@ -20,7 +20,7 @@ GET http://localhost:3003/user/select
 Content-Type: application/json
 ###
 PUT http://localhost:3003/user/edit
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3OWQ4YzRkLTA2OTMtNGUwMy05OWJkLTcxNDBjZDk5ZTZkZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2OTQxMDI0NCwiZXhwIjoxNjY5NDEzODQ0fQ.RdJgig79ZzhGOfDd2x3jh2YxXbjBwYFalxquS3TH7XA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3OWQ4YzRkLTA2OTMtNGUwMy05OWJkLTcxNDBjZDk5ZTZkZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2OTU1NzQxNywiZXhwIjoxNjY5NTYxMDE3fQ.P7uvgSUIahBw4n2ypqxBLFC1Myy7AiNX33IvEMOQLjI
 Content-Type: application/json
 
 {
@@ -46,3 +46,17 @@ Content-Type: application/json
 {
     "id": "07313d37-50ea-4643-83f9-299b15535a68"
 }
+###
+POST http://localhost:3003/show/create
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3OWQ4YzRkLTA2OTMtNGUwMy05OWJkLTcxNDBjZDk5ZTZkZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2OTU1NzQxNywiZXhwIjoxNjY5NTYxMDE3fQ.P7uvgSUIahBw4n2ypqxBLFC1Myy7AiNX33IvEMOQLjI
+Content-Type: application/json
+
+{
+    "week_day": "Sexta",
+    "start_time": "12",
+    "end_time": "13",
+    "band_id": "07313d37-50ea-4643-83f9-299b15535a68"
+}
+###
+GET http://localhost:3003/show/select
+Content-Type: application/json

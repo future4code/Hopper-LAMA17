@@ -1,5 +1,6 @@
 import { BaseDatabase } from "./BaseDatabase";
 import { Show } from "../types/Show";
+import { CustomError } from "../error/CustomError";
 
 export class ShowDatabase extends BaseDatabase {
     private static TABLE_NAME = "LAMA_SHOWS";
@@ -16,23 +17,29 @@ export class ShowDatabase extends BaseDatabase {
         .into(ShowDatabase.TABLE_NAME)
     }
 
-    async select(){
+    async checkSchedule(day: string): Promise<Show[]>{
         try {
-            const shows: Show[] = [];
+            const result = await ShowDatabase
+                .connection
+                .select("*")
+                .where({week_day: day})
+                .from(ShowDatabase.TABLE_NAME)
+            return result
+        } catch (error: any) {
+            throw new CustomError(400, error.message)
+        }
+    }
 
-            const result = await
-            ShowDatabase
+    async daySchedule(day: string){
+        try {
+            const result = await ShowDatabase
                 .connection
                 .select("*")
                 .from(ShowDatabase.TABLE_NAME)
-
-            for(let show of result){
-                shows.push(show)
-            }
-            return shows
-            
-        } catch (error) {
-            
+                .orderBy({start_time}, asc)
+            return result[0]
+        }catch (error) {
+            throw new CustomError(400, error.message)    
         }
     }
 }
