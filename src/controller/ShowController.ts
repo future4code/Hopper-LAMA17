@@ -17,8 +17,19 @@ export class ShowController {
         }
     }
 
-    async select(req: Request, res: Response){
+    async daySchedule(req: Request, res: Response){
         try{
+            const day = req.body;
+
+            const shows = await new ShowBusiness().daySchedule(day);
+            res.send(shows).status(200);
+        } catch (error: any) {
+            res.status(400).send(error.message);
+        }
+    }
+    
+    async select(req: Request, res: Response){
+        try {
             const shows = await new ShowBusiness().select();
             res.send(shows).status(200);
         } catch (error: any) {

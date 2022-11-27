@@ -60,6 +60,10 @@ export class ShowBusiness {
         
     }
 
+    async daySchedule(day:any){
+        return await new ShowDatabase().daySchedule(day);
+    }
+
     async select(){
         return await new ShowDatabase().select();
     }
