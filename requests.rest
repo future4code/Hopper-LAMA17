@@ -2,8 +2,8 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "name": "Andre Andrade",
-    "email": "andre@email.com",
+    "name": "Jordana Jordan",
+    "email": "jordana@email.com",
     "password": "123456",
     "role": "ADMIN"
 }
@@ -12,7 +12,7 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-    "email": "bernardo@email.com",
+    "email": "jordana@email.com",
     "password": "123456"
 }
 ###
@@ -20,7 +20,7 @@ GET http://localhost:3003/user/select
 Content-Type: application/json
 ###
 PUT http://localhost:3003/user/edit
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3OWQ4YzRkLTA2OTMtNGUwMy05OWJkLTcxNDBjZDk5ZTZkZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2OTU1NzQxNywiZXhwIjoxNjY5NTYxMDE3fQ.P7uvgSUIahBw4n2ypqxBLFC1Myy7AiNX33IvEMOQLjI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIwZWE0NDRjLWI0OWItNDE3My1hNGE3LWE3YmVjM2E4ZTQ5MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2OTU5NTQ3OCwiZXhwIjoxNjY5NTk5MDc4fQ.kZRutQgbctbx4K9sdfPeEBHXLjU344vMQdR2wIOfMpk
 Content-Type: application/json
 
 {
@@ -31,7 +31,7 @@ Content-Type: application/json
 }
 ###
 POST http://localhost:3003/band/create
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM0YjlhMmEzLTFmZDItNDc0ZS05Yjc1LTUyY2U5MWQwODA4OSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2OTQxMTI2NiwiZXhwIjoxNjY5NDE0ODY2fQ.Kzwo8L5E858ENoK3ZgGhymlRX4O5PPTiiP5I1fCyseY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIwZWE0NDRjLWI0OWItNDE3My1hNGE3LWE3YmVjM2E4ZTQ5MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2OTU5NTQ3OCwiZXhwIjoxNjY5NTk5MDc4fQ.kZRutQgbctbx4K9sdfPeEBHXLjU344vMQdR2wIOfMpk
 Content-Type: application/json
 
 {
@@ -44,19 +44,20 @@ GET http://localhost:3003/band/find
 Content-Type: application/json
 
 {
-    "id": "07313d37-50ea-4643-83f9-299b15535a68"
+    "name": "Os Maneiros"
 }
 ###
 POST http://localhost:3003/show/create
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3OWQ4YzRkLTA2OTMtNGUwMy05OWJkLTcxNDBjZDk5ZTZkZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2OTU1NzQxNywiZXhwIjoxNjY5NTYxMDE3fQ.P7uvgSUIahBw4n2ypqxBLFC1Myy7AiNX33IvEMOQLjI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIwZWE0NDRjLWI0OWItNDE3My1hNGE3LWE3YmVjM2E4ZTQ5MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2OTU5NTQ3OCwiZXhwIjoxNjY5NTk5MDc4fQ.kZRutQgbctbx4K9sdfPeEBHXLjU344vMQdR2wIOfMpk
 Content-Type: application/json
 
 {
     "week_day": "Sexta",
     "start_time": "12",
     "end_time": "13",
-    "band_id": "07313d37-50ea-4643-83f9-299b15535a68"
+    "band_id": "5faa4d58-ff89-4e4c-9fa3-888cc6738ed9"
 }
 ###
 GET http://localhost:3003/show/select
 Content-Type: application/json
+

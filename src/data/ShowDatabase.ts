@@ -31,18 +31,18 @@ export class ShowDatabase extends BaseDatabase {
         }
     }
 
-    async daySchedule(day: string){
-        try {
-            const result = await ShowDatabase
-                .connection
-                .select("start_time, name, music_genre")
-                .from(`${ShowDatabase.TABLE_NAME}, LAMA_BANDS`)
-                .where(`band_id = LAMA_BANDS.id AND week_day = ${day}`)
-            return result[0]
-        }catch (error) {
-            throw new CustomError(400, error.message)    
-        }
-    }
+    // async daySchedule(day: string){
+    //     try {
+    //         const result = await ShowDatabase
+    //             .connection
+    //             .select("start_time, name, music_genre")
+    //             .from(`${ShowDatabase.TABLE_NAME}, LAMA_BANDS`)
+    //             .where(`band_id = LAMA_BANDS.id AND week_day = ${day}`)
+    //         return result[0]
+    //     }catch (error) {
+    //         throw new CustomError(400, error.message)    
+    //     }
+    // }
     async select(){
         try {
             const shows: Show[] = [];

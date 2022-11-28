@@ -60,9 +60,15 @@ export class ShowBusiness {
         
     }
 
-    async daySchedule(day:any){
-        return await new ShowDatabase().daySchedule(day);
-    }
+    // async daySchedule({week_day}:any):Promise<void>{
+    //     try {
+    //         const showDatabase = new ShowDatabase()
+    //         const daySchedule = await showDatabase.checkSchedule(week_day)
+    //     } catch(error: any) {
+    //         throw new CustomError(400, error.message)
+    //     }
+
+    // }
 
     async select(){
         return await new ShowDatabase().select();
