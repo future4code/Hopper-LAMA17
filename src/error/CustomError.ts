@@ -27,3 +27,19 @@ export class InvalidRole extends CustomError{
         super(401, "Cargo inválido")
     }
 }
+
+export class InvalidDay extends CustomError{
+    constructor(){
+        super(401, "Dia inválido")
+    }
+}
+export class InvalidTime extends CustomError{
+    constructor(){
+        super(401, "Horário inválido")
+    }
+}
+export class Booked extends CustomError{
+    constructor(){
+        super(401, "Outro show já registrado nesse horário")
+    }
+}

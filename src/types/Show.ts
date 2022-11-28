@@ -1,7 +1,7 @@
 export class Show{
     constructor(
         private id: string,
-        private week_day: string,
+        private week_day: ValidDays,
         private start_time: Number,
         private end_time: Number,
         private band_id: string
@@ -14,9 +14,16 @@ export class Show{
     getBandId(){return this.band_id}
 
     setId(newId: string){this.id = newId}
-    setDay(newDay: string){this.week_day = newDay}
+    setDay(newDay: ValidDays){this.week_day = newDay}
     setStart(newStart: Number){this.start_time = newStart}
     setEnd(newEnd: Number){this.end_time = newEnd}
     setBandId(newBandId: string){this.band_id = newBandId}
 }
+
+export enum ValidDays {
+    FRIDAY = "Sexta",
+    SATURDAY = "Sábado",
+    SUNDAY = "Domingo",
+}
+
 

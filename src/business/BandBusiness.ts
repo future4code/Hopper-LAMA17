@@ -1,7 +1,7 @@
 import { BandDatabase } from "../data/BandDatabase";
 import { IdGenerator } from "../services/idGenerator";
 import { Authenticator } from "../services/Authenticator";
-import { CustomError, InvalidRole, Unauthorized } from "../error/CustomError";
+import { CustomError, Unauthorized } from "../error/CustomError";
 
 const idGenerator = new IdGenerator()
 const authenticator = new Authenticator()
